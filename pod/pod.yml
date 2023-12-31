@@ -9,6 +9,11 @@ spec:
   containers:
   - name: myapp
     image: nginx
+    env:
+    - name: MESSAGE
+      value: "hello world"
+    command: ["/bin/sh","-c"]
+    args: ["/bin/echo \"${MESSAGE}\""]
     resources:
       limits:
         memory: "128Mi"
